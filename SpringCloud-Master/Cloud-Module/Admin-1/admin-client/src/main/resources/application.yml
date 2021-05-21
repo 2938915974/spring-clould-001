@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Admin-Client
+  boot:
+    admin:
+      client:
+        url: http://localhost:11100
+server:
+  port: 11101
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+logging:
+  file:
+    path: ../cloud-logs
