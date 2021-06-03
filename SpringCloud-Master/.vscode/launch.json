@@ -1,0 +1,54 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringBootTestApplication<myaop>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.mytest.SpringBootTestApplication",
+            "projectName": "myaop",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaServerApplication<eureka-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.mytest.EurekaServerApplication",
+            "projectName": "eureka-server",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaClientApplication<eureka-client>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.mytest.EurekaClientApplication",
+            "projectName": "eureka-client",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MonitorClientApplication<admin-client>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.mytest.MonitorClientApplication",
+            "projectName": "admin-client",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MonitorServerApplication<admin-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.mytest.MonitorServerApplication",
+            "projectName": "admin-server",
+            "args": ""
+        }
+    ]
+}

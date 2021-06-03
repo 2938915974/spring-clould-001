@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mytest.dao.UserInfoMapper">
+    
+    <resultMap id="BaseResultMap" type="com.mytest.entity.UserInfoEntity">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="address" property="address" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column">
+        id, name, age, address
+    </sql>
+
+    <select id="findUserName" resultType="com.mytest.entity.UserInfoEntity">
+        select <include refid="Base_Column" />
+        from user_info ui
+        where 1 = 1
+            and ui.name = #{name123, javaType = String}
+    </select>
+
+    <select id="findOnlyUserInfo" resultType="com.mytest.entity.UserInfoEntity">
+        select <include refid="Base_Column"/>
+        from user_info
+        where 1 = 1
+            and user_info.id = #{id, javaType = String}
+    </select>
+
+    <select id="findAllUserInfo" resultType="com.mytest.entity.UserInfoEntity">
+        select <include refid="Base_Column"/>
+        from user_info
+    </select>
+
+    <insert id="insertUserInfo" parameterType="com.mytest.entity.UserInfoEntity">
+        insert into user_info(
+        <if test="id != null and id != ''">
+            id,
+        </if>
+        <if test="name != null and name != ''">
+            name,
+        </if>
+        <if test="age != null and age != 0">
+            age,
+        </if>
+        <if test="address != null and address != ''">
+            address
+        </if>
+        )values(
+        <if test="id != null and id != ''">
+            #{id, javaType = String},
+        </if>
+        <if test="name != null and name != ''">
+            #{name, javaType = String},
+        </if>
+        <if test="age != null and age != 0">
+            #{age, javaType = Integer},
+        </if>
+        <if test="address != null and address != ''">
+            #{address,  javaType = Integer}
+        </if>
+        )
+    </insert>
+
+    <update id="updateUserInfo" parameterType="com.mytest.entity.UserInfoEntity">
+        update user_info
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name, javaType = String},
+            </if>
+            <if test="age != null and age != 0">
+                age = #{age, javaType = Integer},
+            </if>
+            <if test="address != null and address != 0">
+                address = #{address, javaType = Integer}
+            </if>
+        </set>
+        where id = #{id, javaType = String}
+    </update>
+
+    <delete id="deleteUserInfo" parameterType="java.lang.String">
+        delete from user_info
+            where 1 = 1
+            and user_info.id = #{id, javaType = String}
+    </delete>
+
+</mapper>

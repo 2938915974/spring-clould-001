@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 1. 指定 DAO 层 -->
+<mapper namespace="com.mytest.dao.LogMapper">
+    <!-- 2. 将 数据库字段 与 Java 实体建⽴映射关系 -->
+    <resultMap id="BaseResultMap" type="com.mytest.entity.LogEntity">
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="uri" property="uri" jdbcType="VARCHAR" />
+        <result column="url" property="url" jdbcType="VARCHAR" />
+        <result column="method_type" property="resultType" jdbcType="VARCHAR" />
+        <result column="method_name" property="methodName" jdbcType="VARCHAR" />
+        <result column="parameter_name" property="parameterName" jdbcType="VARCHAR" />
+        <result column="parameter_values" property="parameterValues" jdbcType="VARCHAR" />
+        <result column="result" property="result" jdbcType="VARCHAR" />
+    </resultMap>
+    <!-- 3. 列出 数据库所有字段 -->
+    <sql id="Base_Column">
+        id, uri, url, method_type, method_name, parameter_name , parameter_values,`result`
+    </sql>
+    <!-- 4. 实现⽆条件查询, 返回值为 LogEntity -->
+    <select id="findAll" resultType="com.mytest.entity.LogEntity">
+        select
+        <include refid="Base_Column" />
+        from logs_data
+        where 1 = 1
+    </select>
+    <!-- 5. 实现⽇志数据的插⼊， 参数类型为 LogEntity -->
+    <insert id="logsInsert" parameterType="com.mytest.entity.LogEntity">
+        insert into logs_data (
+        <if test="id != null and id != ''">
+    id,
+    </if>
+        <if test="uri != null and uri != ''">
+    uri,
+    </if>
+        <if test="url != null and url != ''">
+    url,
+    </if>
+        <if test="methodType != null and methodType != ''">
+    method_type,
+    </if>
+        <if test="methodName != null and methodName != ''">
+    method_name,
+    </if>
+        <if test="parameterName != null and parameterName != ''">
+    parameter_name,
+    </if>
+        <if test="parameterValues != null and parameterValues != ''">
+    parameter_values,
+    </if>
+        <if test="result != null and result != ''">
+    result
+    </if>
+        ) values (
+        <if test="id != null and id != ''">
+    #{id, javaType = String},
+    </if>
+        <if test="uri != null and uri != ''">
+    #{uri, javaType = String},
+    </if>
+        <if test="url != null and url != ''">
+    #{url, javaType = String},
+    </if>
+        <if test="methodType != null and methodType != ''">
+    #{methodType, javaType = String},
+    </if>
+        <if test="methodName != null and methodName != ''">
+    #{methodName, javaType = String},
+    </if>
+        <if test="parameterName != null and parameterName != ''">
+    #{parameterName, javaType = String},
+    </if>
+        <if test="parameterValues != null and parameterValues != ''">
+    #{parameterValues, javaType = String},
+    </if>
+        <if test="result != null and result != ''">
+    #{result, javaType = String}
+    </if>
+    )
+    </insert>
+</mapper>

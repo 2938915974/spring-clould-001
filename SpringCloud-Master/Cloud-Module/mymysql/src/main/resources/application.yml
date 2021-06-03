@@ -1,0 +1,45 @@
+spring: 
+  application:
+    name: springcuid
+    # 注意，redis 的配置项是在 spring 的⼆级树形下
+  redis:
+      # Redis 的连接地址
+    host: 192.168.27.138
+      # Redis 的端口
+    port: 36379
+        # Redis 的密码，这⾥我们暂时没有设置密码
+    password: ''
+        # Redis 中使⽤哪个分区，使⽤哪个库，默认有16个，任取⼀个即可
+    database: 1
+      # 使⽤ Lettuce 作为连接池
+    lettuce:
+      pool:
+        # Redis 的最⼤连接数
+        max-active: 1000
+          # Redis 最⼤空闲数
+        max-idle: 10
+          # Redis 最小空闲数
+        min-idle: 3
+          # 空闲的连接不被清除，时间⽆限等待连接直到超时
+        max-wait: -1
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test01
+    username: root
+    password: '123456'
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      max-lifetime: 2000000
+      maximum-pool-size: 20
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:11200/eureka
+
+server:
+  port: 31000
+
+mybatis:
+  mapper-locations: classpath:mapper/**.xml

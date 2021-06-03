@@ -1,0 +1,16 @@
+2021-06-05 10:07:58.179  INFO 18732 --- [main] com.mytest.MonitorClientApplication      : Starting MonitorClientApplication on DESKTOP-Q6GQOV3 with PID 18732 (C:\JAVA\vscode_work\spring-cloud-003\SpringCloud-Master\Cloud-Module\Admin-1\admin-client\target\classes started by 123 in c:\JAVA\vscode_work\spring-cloud-003\SpringCloud-Master\Cloud-Module\Admin-1\admin-client)
+2021-06-05 10:07:58.186  INFO 18732 --- [main] com.mytest.MonitorClientApplication      : No active profile set, falling back to default profiles: default
+2021-06-05 10:07:59.401  INFO 18732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 11101 (http)
+2021-06-05 10:07:59.415  INFO 18732 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-05 10:07:59.417  INFO 18732 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-06-05 10:07:59.512  INFO 18732 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-05 10:07:59.513  INFO 18732 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1279 ms
+2021-06-05 10:07:59.892  INFO 18732 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-05 10:08:00.270  INFO 18732 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2021-06-05 10:08:00.357  INFO 18732 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2021-06-05 10:08:00.428  INFO 18732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 11101 (http) with context path ''
+2021-06-05 10:08:00.446  INFO 18732 --- [main] com.mytest.MonitorClientApplication      : Started MonitorClientApplication in 2.639 seconds (JVM running for 3.569)
+2021-06-05 10:08:03.230  INFO 18732 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as 7c6ace097f1b
+2021-06-05 10:08:03.255  INFO 18732 --- [http-nio-11101-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-05 10:08:03.255  INFO 18732 --- [http-nio-11101-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-05 10:08:03.262  INFO 18732 --- [http-nio-11101-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
